@@ -8,7 +8,7 @@ const cowsUrl = "http://localhost:3000/cows";
 // making fetch request to add cows to cows bar
 fetch(cowsUrl)
     .then(response => response.json())
-    .then(data => {
+    .then(cows => {
         let breed = cowsInformation.querySelector("#breed");
         let image = cowsInformation.querySelector("#image");
         breed.textContent = cows[0].breed;
@@ -22,12 +22,12 @@ fetch(cowsUrl)
 
 // creating span element for each cow, adding it to cows bar
 // using arrow function to add event listener to each cow
-const addToCowsBar = (cow) => {
+const addToCowsBar = (cows) => {
     const span = document.createElement("span");
-    span.textContent = cow.breed;
+    span.textContent = cows.breed;
     cowsBar.appendChild(span);
 
-    span.addEventListener('click', () => {
+    span.addEventListener('click', (event) => {
         const breed = cowsInfo.querySelector("#breed")
         const image = cowsInfo.querySelector("#image")
 
