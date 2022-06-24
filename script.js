@@ -72,3 +72,31 @@ form.addEventListener('submit', (event) => {
         })
         .catch(error => console.log(error));
 });
+
+
+// dealing with the reset-button
+const resetButton = document.querySelector("#reset-button");
+
+resetButton.addEventListener('click', (event) => {
+    fetch(cowsUrl)
+        .then(response => response.json())
+        .then(cows => {
+            const breed = cowsInformation.querySelector("#breed");
+            const id = cows.find(cows => cows.breed === breed.textContent).id;
+            fetch(`${cowsUrl}/${id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    price: 0
+                })
+            })
+                .then(response => response.json())
+                .then(cows => cowsPrice.textContent = cows.price)
+                .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+});
+
