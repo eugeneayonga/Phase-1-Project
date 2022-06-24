@@ -48,3 +48,36 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
 }
+
+#image {
+    width: 320px;
+    height: 320px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+input[type=text] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    background-color: lawngreen;
+    color: black;
+    font: 600 1.5em/1.5em "poppins", sans-serif;
+}
+
+input[type=submit], button {
+    width: 25%;
+    padding: 2px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    background-color: orangered;
+    color: black;
+    font: 600 1.5em/1.5em "poppins", sans-serif;
+}
