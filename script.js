@@ -18,4 +18,20 @@ fetch(cowsUrl)
         cows.forEach(cows => addToCowsBar(cows));
     })
     .catch(error => console.log(error));
-    
+
+
+// creating span element for each cow, adding it to cows bar
+// using arrow function to add event listener to each cow
+const addToCowsBar = (cow) => {
+    const span = document.createElement("span");
+    span.textContent = cow.breed;
+    cowsBar.appendChild(span);
+
+    span.addEventListener('click', () => {
+        const breed = cowsInfo.querySelector("#breed")
+        const image = cowsInfo.querySelector("#image")
+
+        breed.textContent = cows.breed
+        image.src = cows.image
+    })
+}

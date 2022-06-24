@@ -20,22 +20,26 @@ html, body {
     background: darkcyan;
     justify-content: space-evenly;
     display: flex;
+    padding-bottom: 3vh;
     flex-wrap: wrap;
     height: 200px;
 }
 
+
+
 #cows-bar span {
-    font: 600 1.5em/1.5em "poppins", sans-serif;
-    color: lawngreen;
-    background-color: black;
-    height: 60%;
-    width: 60%;
-    padding: 0.6em;
+    padding: 1%;
+    height: 80%;
+    width: 8vw;
     display: flex;
     justify-content: center;
-    margin: 0.6em;
-    border-radius: 3em;
+    font-size: 3vh;
+    align-items: center;
+    border-radius: 2em;
+    border: 1px solid white;
 }
+
+
 
 .cowsInfo {
     padding: 30px;
