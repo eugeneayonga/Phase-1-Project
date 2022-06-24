@@ -35,3 +35,40 @@ const addToCowsBar = (cows) => {
         image.src = cows.image
     })
 }
+
+
+// dealing with the form
+const form = document.querySelector("#bids-form");
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const currentPrice = parseInt(cowsPrice.textContent, 10);
+    const addedPrice = parseInt(event.target.price.value, 10);
+    cowsPrice.textContent = (currentPrice += addedPrice);
+    form.reset();
+
+    // making fetch request to add bids to database
+    fetch(cowsUrl)
+        .then(response => response.json())
+        .then(cows => {
+            const cowBreed = document.querySelector("#breed");
+            const cowId = cows.find(cows => cows.breed === cowBreed.textContent).id;
+            fetch(`${cowsUrl}/${cowId}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    price: cowsPrice.textContent
+                })
+            })
+                .then(response => response.json())
+                .then(cows => {
+                    cowsPrice.textContent = cows.price;
+                    console.log(cows.price)
+                })
+                .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+});
