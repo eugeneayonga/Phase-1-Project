@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Ovo&family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+.logo {
+    padding: 0.6em;
+    color: lawngreen;
+    background-color: black;
+    font: 600 1.5em/1.5em "poppins", sans-serif;
+    text-align: center;
+}
