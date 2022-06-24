@@ -1,0 +1,40 @@
+{
+    "cows": [
+      {
+        "id": 1,
+        "breed": "Holstein Friesian",
+        "image": "https://3.bp.blogspot.com/-FEn_gbn6J5k/T9t3wDErPDI/AAAAAAAAAb0/C5QPG3Q36KQ/s600/Holstein+Friesian.JPG",
+        "price": 0
+      },
+      {
+        "id": 2,
+        "breed": "Boran",
+        "image": "https://www.thecattlesite.com/breeds/contents/boranbull.jpg",
+        "price": 0
+      },
+      {
+        "id": 3,
+        "breed": "Guernsey",
+        "image": "https://www.thecattlesite.com/breeds/contents/Guernsey%20cow.jpg",
+        "price": 0
+      },
+      {
+        "id": 4,
+        "breed": "Jersey",
+        "image": "https://i.pinimg.com/originals/6d/81/a2/6d81a2073e82a79721730bb2a8049040.jpg",
+        "price": 0
+      },
+      {
+        "id": 5,
+        "breed": "Sahiwal",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Sahiwal-_breed_cow_at_the_dairy_unit_attached_to_Bhai_Ram_Singh_Memorial_%28Gurudwara%29_%2C_Bhaini_Sahib_%2CLudhyana%2C_Punjab_%2CIndia.JPG",
+        "price": 0
+      },
+      {
+        "id": 6,
+        "breed": "Ayrshire",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuj9fegBwRnWOEIziM0juLF3NRfJ7mBu6w9SzTYQRRn_qgyzLJ25eHelRt7IUZqrEMPMo&usqp=CAU",
+        "price": 0
+      }
+    ]
+  }
