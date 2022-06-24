@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cows & Bids</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="logo">
+        <h1>Cows & Bids</h1>
+    </div>
+
+    <div id="cows-bar">
+    </div>
+    
+    <div class="cowsInfo">
+        <div id = "extensive-info">
+            <p id="breed">Cow Breed</p>
+            <img id="image" src="resources/dummy.gif" alt="Cow Breed">
+        </div>
+           <h4>Total Price: <span id="bid-count"> Cow Price</span></h4>
+           <form id="bid-form">
+                <input type="text" placeholder="Enter Bid" id="bids" name="bids">
+                <input type="submit" value="Submit Bid" />
+           </form>
+           <button id="reset-button">Reset Bids</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
