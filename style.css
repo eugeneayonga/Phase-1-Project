@@ -13,3 +13,13 @@ html, body {
     font: 600 1.5em/1.5em "poppins", sans-serif;
     text-align: center;
 }
+
+#cows-bar {
+    align-items: center;
+    padding: 30px;
+    background: darkcyan;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+}
