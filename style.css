@@ -10,7 +10,7 @@ html, body {
     padding: 0.6em;
     color: lawngreen;
     background-color: black;
-    font: 600 1.5em/1.5em "poppins", sans-serif;
+    font: 700 1.5em/1.5em "poppins", sans-serif;
     text-align: center;
 }
 
@@ -55,8 +55,8 @@ html, body {
 }
 
 #image {
-    width: 500px;
-    height: 400px;
+    width: 550px;
+    height: 450px;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
@@ -84,16 +84,16 @@ input[type=submit], button {
     border-radius: 3px;
     background-color: darkcyan;
     color: black;
-    font: 600 1.5em/1.5em "poppins", sans-serif;
+    font: 500 1.5em/1.5em "poppins", sans-serif;
 }
 
 h4 {
-    font: 600 1.5em/1.5em "poppins", sans-serif;
+    font: 500 1.5em/1.5em "poppins", sans-serif;
     color: white;
 }
 
 #breed {
-    font: 600 1.5em/1.5em "poppins", sans-serif;
+    font: 700 1.5em/1.5em "poppins", sans-serif;
     color: white;
     text-align: center;
 }
