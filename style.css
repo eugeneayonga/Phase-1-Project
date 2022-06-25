@@ -92,6 +92,7 @@ input[type=submit], button {
 h4 {
     font: 500 1.5em/1.5em "poppins", sans-serif;
     color: white;
+    text-align: center;
 }
 
 #breed {
