@@ -9,12 +9,8 @@ Getting:
 2. Cow Prices
 3. Cow Images
 
-Patching:
-1. http://localhost:3000/cows
-******
-
-## SCREENSHOTS
-
+## SCREENSHOT(S)
+![cowsAndBids_Phase-1 Project](https://user-images.githubusercontent.com/64194654/175784495-6b584215-927b-4dda-973e-e58e08aa0223.png)
 
 
 ********
