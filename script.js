@@ -1,8 +1,8 @@
 const cowsUrl = "http://localhost:3000/cows"; // to be used for fetch() requests
 
-const cowsBar = document.querySelector('#cow-bar');
-let cowsPrices = document.querySelector('#price-count');
-const cowsInfo = document.querySelector('#extensive-info');
+const cowsBar = document.querySelector("#cow-bar");
+let cowsPrices = document.querySelector("#price-count");
+const cowsInfo = document.querySelector("#extensive-info");
 
 
 
@@ -11,8 +11,8 @@ const cowsInfo = document.querySelector('#extensive-info');
 fetch(cowsUrl)
 .then(response => response.json())
 .then(cows => {
-    const breed = cowsInfo.querySelector('#breed');
-    const image = cowsInfo.querySelector('#image');
+    const breed = cowsInfo.querySelector("#breed");
+    const image = cowsInfo.querySelector("#image");
     breed.textContent = cows[0].breed
     image.src = cows[0].image
     cowsPrices.textContent = cows[0].prices
@@ -24,26 +24,28 @@ fetch(cowsUrl)
 
 
 // dealing with the form
-const form = document.querySelector('#prices-form');
+const form = document.querySelector("#prices-form");
 
-form.addEventListener('submit', (event) => {
+form.addEventListener("submit", (event) => {
     event.preventDefault()
     let currentPrice = parseInt(cowsPrices.textContent, 10);
     let addedBid = parseInt(event.target.prices.value, 10);
-    const valueAddedTaxFactor = 1.16;
+
+    const valueAddedTaxFactor = 1.16; // factoring in value added tax
+
     cowsPrices.textContent = (currentPrice += addedBid) * valueAddedTaxFactor
     form.reset()
 
     fetch(cowsUrl)
     .then(response => response.json())
     .then(cows => {
-        const cowBreed = document.querySelector('#breed');
+        const cowBreed = document.querySelector("#breed");
         const cowID = cows.find(cow => cow.breed === cowBreed.textContent);
         fetch(`${cowsUrl}/${cowID.id}`, {
-            method: 'PATCH',
+            method: "PATCH",
             headers: {
-                'Content-Type' : 'application/json',
-                'Accept' : 'application/json'
+                "Content-Type" : "application/json",
+                "Accept" : "application/json"
             },
             body: JSON.stringify({
                 prices : cowsPrices.textContent
@@ -61,14 +63,14 @@ form.addEventListener('submit', (event) => {
 // creating span element for each cow, adding it to cows bar
 // using arrow function to add event listener to each cow
 const addTocowsBar = (cow) => {
-    const span = document.createElement('span');
+    const span = document.createElement("span");
     span.textContent = cow.breed
     cowsBar.appendChild(span)
 
-    span.addEventListener('click', (event) => {
+    span.addEventListener("click", (event) => {
         
-        const cowBreed = cowsInfo.querySelector('#breed');
-        const image = cowsInfo.querySelector('#image');
+        const cowBreed = cowsInfo.querySelector("#breed");
+        const image = cowsInfo.querySelector("#image");
 
         breed.textContent = cow.breed
         image.src = cow.image
@@ -79,23 +81,23 @@ const addTocowsBar = (cow) => {
 
 
 // dealing with the reset-button and the form to revert Selling Price to 0
-const resetButton = document.querySelector('#reset-button');
+const resetButton = document.querySelector("#reset-button");
 
-resetButton.addEventListener('click', (event) => {
+resetButton.addEventListener("click", (event) => {
 
     fetch(cowsUrl)
     .then(res => res.json())
     .then(cows => {
-        const cowBreed = document.querySelector('#breed');
+        const cowBreed = document.querySelector("#breed");
         const cowID = cows.find(cow => cow.breed === cowBreed.textContent)
         fetch(`${cowsUrl}/${cowID.id}`, {
-            method: 'PATCH',
+            method: "PATCH",
             headers: {
-                'Content-Type' : 'application/json',
-                'Accept' : 'application/json'
+                "Content-Type" : "application/json",
+                "Accept" : "application/json"
             },
             body: JSON.stringify({
-                prices : '0'
+                prices : 0
             })
         })
         .then(res => res.json())
