@@ -85,3 +85,15 @@ input[type=submit], button {
     color: black;
     font: 600 1.5em/1.5em "poppins", sans-serif;
 }
+
+h4 {
+    font: 600 1.5em/1.5em "poppins", sans-serif;
+    color: white;
+}
+
+#breed {
+    font: 600 1.5em/1.5em "poppins", sans-serif;
+    color: white;
+    text-align: center;
+}
+

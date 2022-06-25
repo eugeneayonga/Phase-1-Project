@@ -4,7 +4,7 @@
       "id": 1,
       "breed": "Holstein Friesian",
       "image": "https://3.bp.blogspot.com/-FEn_gbn6J5k/T9t3wDErPDI/AAAAAAAAAb0/C5QPG3Q36KQ/s600/Holstein+Friesian.JPG",
-      "price": 0
+      "price": "0"
     },
     {
       "id": 2,
@@ -34,7 +34,7 @@
       "id": 6,
       "breed": "Ayrshire",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuj9fegBwRnWOEIziM0juLF3NRfJ7mBu6w9SzTYQRRn_qgyzLJ25eHelRt7IUZqrEMPMo&usqp=CAU",
-      "price": 0
+      "price": "0"
     }
   ]
 }

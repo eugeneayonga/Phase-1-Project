@@ -1,3 +1,4 @@
+// PROJECT
 // variable initialization
 const cowsPrice = document.querySelector("#bid-count");
 const cowsBar = document.querySelector("#cows-bar");
@@ -5,14 +6,15 @@ const cowsInformation = document.querySelector("#extensive-info");
 const cowsUrl = "http://localhost:3000/cows";
 
 
+
 // making fetch request to add cows to cows bar
 fetch(cowsUrl)
     .then(response => response.json())
     .then(cows => {
-        let breed = cowsInformation.querySelector("#breed");
-        let image = cowsInformation.querySelector("#image");
-        breed.textContent = cows[0].breed;
-        image.src = cows[0].image;
+        const breedCow = cowsInformation.querySelector("#breed");
+        const imageCow = cowsInformation.querySelector("#image");
+        breedCow.textContent = cows[0].breed;
+        imageCow.src = cows[0].image;
         cowsPrice.textContent = cows[0].price;
 
         cows.forEach(cows => addToCowsBar(cows));
@@ -20,30 +22,34 @@ fetch(cowsUrl)
     .catch(error => console.log(error));
 
 
+
+    
 // creating span element for each cow, adding it to cows bar
 // using arrow function to add event listener to each cow
 const addToCowsBar = (cows) => {
-    const span = document.createElement("span");
-    span.textContent = cows.breed;
-    cowsBar.appendChild(span);
+    const spanElement = document.createElement("span");
+    spanElement.textContent = cows.breed;
+    cowsBar.appendChild(spanElement); // use append only
 
-    span.addEventListener('click', (event) => {
-        const breed = cowsInfo.querySelector("#breed")
-        const image = cowsInfo.querySelector("#image")
+    spanElement.addEventListener("click", (event) => {
+        const cowBreed = cowsInfo.querySelector("#breed")
+        const cowImage = cowsInfo.querySelector("#image")
 
-        breed.textContent = cows.breed
-        image.src = cows.image
+        cowBreed.textContent = cows.breed
+        cowImage.src = cows.image
     })
 }
+
+
 
 
 // dealing with the form
 const form = document.querySelector("#bids-form");
 
-form.addEventListener('submit', (event) => {
+form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const currentPrice = parseInt(cowsPrice.textContent, 10);
-    const addedPrice = parseInt(event.target.price.value, 10);
+    let currentPrice = parseInt(cowsPrice.textContent, 10);
+    let addedPrice = parseInt(event.target.price.value, 10);
     cowsPrice.textContent = (currentPrice += addedPrice);
     form.reset();
 
@@ -52,12 +58,12 @@ form.addEventListener('submit', (event) => {
         .then(response => response.json())
         .then(cows => {
             const cowBreed = document.querySelector("#breed");
-            const cowId = cows.find(cows => cows.breed === cowBreed.textContent).id;
-            fetch(`${cowsUrl}/${cowId}`, {
+            const cowId = cows.find(cows => cows.breed === cowBreed.textContent);
+            fetch(`${cowsUrl}/${cowId.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
-                    "Accept": "application/json"
+                    "Accept": "application/json" // consider removing this
                 },
                 body: JSON.stringify({
                     price: cowsPrice.textContent
@@ -68,10 +74,12 @@ form.addEventListener('submit', (event) => {
                     cowsPrice.textContent = cows.price;
                     console.log(cows.price)
                 })
-                .catch(error => console.log(error));
+                .catch(error => console.log(error)); // consider removing this
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); // consider removing this
 });
+
+
 
 
 // dealing with the reset-button
@@ -82,21 +90,22 @@ resetButton.addEventListener('click', (event) => {
         .then(response => response.json())
         .then(cows => {
             const breed = cowsInformation.querySelector("#breed");
-            const id = cows.find(cows => cows.breed === breed.textContent).id;
-            fetch(`${cowsUrl}/${id}`, {
+            const id = cows.find(cows => cows.breed === breed.textContent);
+            fetch(`${cowsUrl}/${id.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
-                    "Accept": "application/json"
+                    "Accept": "application/json" // consider removing this
                 },
                 body: JSON.stringify({
                     price: 0
                 })
             })
-                .then(response => response.json())
-                .then(cows => cowsPrice.textContent = cows.price)
-                .catch(error => console.log(error));
+                .then(response => response.json()) // check indentation
+                .then(cows => cowsPrice.textContent = cows.price) // check indentation
+                .catch(error => console.log(error)); // consider removing this
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); // consider removing this
 });
+
 
