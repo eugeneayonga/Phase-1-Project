@@ -1,3 +1,4 @@
+// Variable initialization
 const cowsUrl = "http://localhost:3000/cows"; // to be used for fetch() requests
 
 const cowsBar = document.querySelector("#cow-bar");
@@ -17,7 +18,8 @@ fetch(cowsUrl)
     image.src = cows[0].image
     cowsPrices.textContent = cows[0].prices
 
-    cows.forEach(cow => addTocowsBar(cow)) // iterating through the array of cows and adding them to the cows bar
+    // iterating through the array of cows and adding them to the cows bar
+    cows.forEach(cow => addTocowsBar(cow)) 
 })
 .catch(error => console.log(error))
 
@@ -28,11 +30,12 @@ const form = document.querySelector("#prices-form");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault()
-    let currentPrice = parseInt(cowsPrices.textContent, 10);
+    let currentPrice = parseInt(cowsPrices.textContent, 10); // base 10
     let addedBid = parseInt(event.target.prices.value, 10);
 
     const valueAddedTaxFactor = 1.16; // factoring in value added tax
 
+    // adding, assigning to and factoring in value added tax via multiplication
     cowsPrices.textContent = (currentPrice += addedBid) * valueAddedTaxFactor
     form.reset()
 
@@ -58,6 +61,7 @@ form.addEventListener("submit", (event) => {
        }) .catch(error => console.log(error))
     }) .catch(error => console.log(error))
 })
+
 
 
 // creating span element for each cow, adding it to cows bar
@@ -107,3 +111,8 @@ resetButton.addEventListener("click", (event) => {
 
 })
 
+
+// adding DOMContentLoaded 
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+});
