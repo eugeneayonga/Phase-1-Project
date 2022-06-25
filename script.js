@@ -1,10 +1,10 @@
 // Variable initialization
 const cowsUrl = "http://localhost:3000/cows"; // to be used for fetch() requests
 
+
 const cowsBar = document.querySelector("#cow-bar");
 let cowsPrices = document.querySelector("#price-count");
 const cowsInfo = document.querySelector("#extensive-info");
-
 
 
 
@@ -110,6 +110,7 @@ resetButton.addEventListener("click", (event) => {
     }) .catch(error => console.log(error))
 
 })
+
 
 
 // adding DOMContentLoaded 
