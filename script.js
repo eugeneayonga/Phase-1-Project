@@ -23,25 +23,6 @@ fetch(cowsUrl)
 
 
 
-    
-// creating span element for each cow, adding it to cows bar
-// using arrow function to add event listener to each cow
-const addToCowsBar = (cows) => {
-    const spanElement = document.createElement("span");
-    spanElement.textContent = cows.breed;
-    cowsBar.appendChild(spanElement); // use append only
-
-    spanElement.addEventListener("click", (event) => {
-        const cowBreed = cowsInfo.querySelector("#breed")
-        const cowImage = cowsInfo.querySelector("#image")
-
-        cowBreed.textContent = cows.breed
-        cowImage.src = cows.image
-    })
-}
-
-
-
 
 // dealing with the form
 const form = document.querySelector("#bids-form");
@@ -79,6 +60,23 @@ form.addEventListener("submit", (event) => {
         .catch(error => console.log(error)); // consider removing this
 });
 
+
+
+// creating span element for each cow, adding it to cows bar
+// using arrow function to add event listener to each cow
+const addToCowsBar = (cows) => {
+    const spanElement = document.createElement("span");
+    spanElement.textContent = cows.breed;
+    cowsBar.appendChild(spanElement); // use append only
+
+    spanElement.addEventListener("click", (event) => {
+        const cowBreed = cowsInfo.querySelector("#breed")
+        const cowImage = cowsInfo.querySelector("#image")
+
+        cowBreed.textContent = cows.breed
+        cowImage.src = cows.image
+    })
+}
 
 
 
