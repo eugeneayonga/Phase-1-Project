@@ -14,7 +14,7 @@ html, body {
     text-align: center;
 }
 
-#cows-bar {
+#cow-bar {
     align-items: center;
     padding: 30px;
     background: darkcyan;
@@ -27,7 +27,7 @@ html, body {
 
 
 
-#cows-bar span {
+#cow-bar span {
     padding: 1%;
     height: 80%;
     width: 8vw;
@@ -41,7 +41,7 @@ html, body {
 
 
 
-.cowsInfo {
+.cowInfo {
     padding: 30px;
     background: black;
     border-radius: 10px;
